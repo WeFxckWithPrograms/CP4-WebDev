@@ -65,7 +65,7 @@ const Mercado = ({ addToCart }) => {
           <p>Abra o console do navegador (F12) para ver detalhes do erro</p>
         </div>
       ) : (
-        <div className="produtos-grid">
+        <div className="produtos-container">
           {produtos.map(produto => (
             <Produto
               key={produto.id}

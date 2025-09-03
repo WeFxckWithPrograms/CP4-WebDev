@@ -1,0 +1,98 @@
+/* BASE GERAL */
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  /* GRID CONTAINER */
+  .produtos-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 75px;       
+    justify-content: space-between; 
+    margin: 100px;
+  }
+  
+  .produto-card {
+    cursor: pointer;    
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #ca3c3c;
+    align-items: center;
+    width: 350px;
+    max-height: 100%;
+    margin: 1px;
+  }
+  .produto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.377);
+  }
+  
+  /* IMAGEM */
+  .produto-imagem-placeholder {
+    height: 450px;
+    width: 350px;
+    background-color: #cceee8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #00796b;
+    font-size: 1.2em;
+    border-radius: 18px 18px 0 0;
+  }
+  
+  /* INFO */
+  .produto-info {
+    margin: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .produto-nome {
+    font-size: 1.3em;
+    color: #000000;
+    font-weight: 600;
+    margin: 8px 0;
+    text-align: center;
+  }
+  
+  .produto-classe,
+  .produto-especifico,
+  .produto-descricao {
+    font-size: 1.2em;
+    color: #030303;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  
+  .produto-preco {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #030303;
+    text-align: center;
+  }
+  
+  /* BOTÃO */
+  .btn-comprar {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 0 0 12px 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px; /* garante que fique no final */
+    flex-direction: column;
+  }
+  
+  .btn-comprar:hover {
+    background-color: #2e7d32;
+  }
+  
