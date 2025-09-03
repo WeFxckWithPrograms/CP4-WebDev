@@ -1,4 +1,3 @@
-// pages/Mercado.jsx
 import React, { useState, useEffect } from 'react';
 import Produto from '../components/Produto';
 import { fetchProdutos } from '../services/api';
