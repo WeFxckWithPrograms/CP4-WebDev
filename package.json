@@ -3,15 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://vca22.github.io/cP4-WebDev",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3001",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "server": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "react": "^19.1.1",
