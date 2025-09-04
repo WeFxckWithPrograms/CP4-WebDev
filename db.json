@@ -15,7 +15,8 @@
       "classe": "Calçados",
       "numero": "40",
       "descricao": "Tênis moderno produzido a partir de garrafas PET recicladas, resistente e ecologicamente correto.",
-      "preco": 199.90
+      "preco": 199.90,
+      "imagem": "/tenisSustentável"
     },
     {
       "id": 3,
@@ -23,7 +24,8 @@
       "classe": "Beleza",
       "conteudo": "500 ml",
       "descricao": "Shampoo vegano formulado com ingredientes naturais, sem químicos agressivos e livre de crueldade animal.",
-      "preco": 32.50
+      "preco": 32.50,
+      "imagem": "/shampooNatural"
 
     },
     {
@@ -31,14 +33,16 @@
       "nome": "Sabonete Artesanal de Carvão Ativado",
       "classe": "Beleza",
       "descricao": "Sabonete artesanal vegano que ajuda na limpeza profunda da pele, removendo impurezas e oleosidade.",
-      "preco": 12.00
+      "preco": 12.00,
+      "imagem": "/saboneteArtesanal"
     },
     {
       "id": 5,
       "nome": "Escova de Dentes de Bambu",
       "classe": "Higiene",
       "descricao": "Escova de dentes sustentável com cabo de bambu biodegradável e cerdas macias.",
-      "preco": 15.00
+      "preco": 15.00,
+      "imagem": "/escovaDeDentes"
     },
     {
       "id": 6,
@@ -46,14 +50,16 @@
       "classe": "Tecnologia Verde",
       "capacidade": "Carrega ate duas cargas completas",
       "descricao": "Carregador portátil movido a energia solar, perfeito para viagens e uso ao ar livre.",
-      "preco": 149.90
+      "preco": 149.90,
+      "imagem": "/carregadorPortatil"
     },
     {
       "id": 7,
       "nome": "Bolsa de Tecido Reutilizável",
       "classe": "Acessórios",
       "descricao": "Bolsa durável feita de tecido reutilizável, substitui sacolas plásticas e ajuda a reduzir resíduos.",
-      "preco": 39.90
+      "preco": 39.90,
+      "imagem": "/bolsaDeTecido"
     },
     {
       "id": 8,
@@ -61,7 +67,8 @@
       "classe": "Casa Sustentável",
       "duracão": "Dura cerca de 24 horas com carga cheia",
       "descricao": "Luminária compacta que utiliza energia solar para iluminar ambientes de forma econômica e ecológica.",
-      "preco": 89.90
+      "preco": 89.90,
+      "imagem": "/luminariaSolar"
     }
   ]
 }
