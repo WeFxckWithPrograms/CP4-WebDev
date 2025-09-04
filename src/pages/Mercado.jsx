@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Produto from '../components/Produto';
+import Filtros from '../pages/Filtros';
 import { fetchProdutos } from '../services/api';
 import '../css/global.css';
 
 const Mercado = ({ addToCart }) => {
   const [produtos, setProdutos] = useState([]);
+  const [produtosFiltrados, setProdutosFiltrados] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -23,6 +25,7 @@ const Mercado = ({ addToCart }) => {
         console.log('Quantidade de produtos:', dados.length);
         
         setProdutos(dados);
+        setProdutosFiltrados(dados);
         
       } catch (err) {
         console.error('Erro no Mercado:', err);
@@ -35,6 +38,53 @@ const Mercado = ({ addToCart }) => {
 
     carregarProdutos();
   }, []);
+
+  // Função para aplicar filtros
+  const aplicarFiltros = (filtros) => {
+    let produtosFiltrados = [...produtos];
+
+    // Filtrar por categoria
+    if (filtros.categoria !== 'todos') {
+      produtosFiltrados = produtosFiltrados.filter(
+        produto => produto.classe === filtros.categoria
+      );
+    }
+
+    // Filtrar por preço mínimo
+    if (filtros.precoMin !== '') {
+      produtosFiltrados = produtosFiltrados.filter(
+        produto => produto.preco >= Number(filtros.precoMin)
+      );
+    }
+
+    // Filtrar por preço máximo
+    if (filtros.precoMax !== '') {
+      produtosFiltrados = produtosFiltrados.filter(
+        produto => produto.preco <= Number(filtros.precoMax)
+      );
+    }
+
+    // Ordenação
+    switch (filtros.ordenacao) {
+      case 'preco-crescente':
+        produtosFiltrados.sort((a, b) => a.preco - b.preco);
+        break;
+      case 'preco-decrescente':
+        produtosFiltrados.sort((a, b) => b.preco - a.preco);
+        break;
+      case 'nome-a-z':
+        produtosFiltrados.sort((a, b) => a.nome.localeCompare(b.nome));
+        break;
+      case 'nome-z-a':
+        produtosFiltrados.sort((a, b) => b.nome.localeCompare(a.nome));
+        break;
+      default:
+        // Mantém a ordenação padrão
+        break;
+    }
+
+    setProdutosFiltrados(produtosFiltrados);
+  };
 
   // Debug do estado
   useEffect(() => {
@@ -51,7 +101,7 @@ const Mercado = ({ addToCart }) => {
     return <div className="error">{error}</div>;
   }
 
-  console.log('Renderizando produtos grid com', produtos.length, 'produtos');
+  console.log('Renderizando produtos grid com', produtosFiltrados.length, 'produtos filtrados');
 
   return (
     <div className="mercado-container">
@@ -59,16 +109,30 @@ const Mercado = ({ addToCart }) => {
         <h2>Nossos Produtos Sustentáveis</h2>
         <p className="subtitulo">Descubra itens ecológicos para um estilo de vida consciente</p>
       </div>
+
+      <Filtros 
+        produtos={produtos} 
+        onFiltrosChange={aplicarFiltros} 
+      />
       
-      {produtos.length === 0 ? (
+      <div className="resultados-filtro">
+        <p>
+          {produtosFiltrados.length === produtos.length 
+            ? `Mostrando todos os ${produtos.length} produtos`
+            : `Mostrando ${produtosFiltrados.length} de ${produtos.length} produtos`
+          }
+        </p>
+      </div>
+      
+      {produtosFiltrados.length === 0 ? (
         <div className="no-products">
           <h3>Nenhum produto encontrado</h3>
-          <p>Verifique se o arquivo produto.json está em public/data/</p>
-          <p>Abra o console do navegador (F12) para ver detalhes do erro</p>
+          <p>Nenhum produto corresponde aos filtros aplicados.</p>
+          <p>Tente ajustar os critérios de filtragem.</p>
         </div>
       ) : (
         <div className="produtos-container">
-          {produtos.map(produto => (
+          {produtosFiltrados.map(produto => (
             <Produto
               key={produto.id}
               produto={produto}
