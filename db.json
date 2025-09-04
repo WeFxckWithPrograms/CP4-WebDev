@@ -16,7 +16,7 @@
       "numero": "40",
       "descricao": "Tênis moderno produzido a partir de garrafas PET recicladas, resistente e ecologicamente correto.",
       "preco": 199.90,
-      "imagem": "/tenisSustentável"
+      "imagem": "/tenisSustentável.png"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "conteudo": "500 ml",
       "descricao": "Shampoo vegano formulado com ingredientes naturais, sem químicos agressivos e livre de crueldade animal.",
       "preco": 32.50,
-      "imagem": "/shampooNatural"
+      "imagem": "/shampooNatural.png"
 
     },
     {
@@ -34,7 +34,7 @@
       "classe": "Beleza",
       "descricao": "Sabonete artesanal vegano que ajuda na limpeza profunda da pele, removendo impurezas e oleosidade.",
       "preco": 12.00,
-      "imagem": "/saboneteArtesanal"
+      "imagem": "/saboneteArtesanal.png"
     },
     {
       "id": 5,
@@ -42,7 +42,7 @@
       "classe": "Higiene",
       "descricao": "Escova de dentes sustentável com cabo de bambu biodegradável e cerdas macias.",
       "preco": 15.00,
-      "imagem": "/escovaDeDentes"
+      "imagem": "/escovaDeDentes.png"
     },
     {
       "id": 6,
@@ -51,7 +51,7 @@
       "capacidade": "Carrega ate duas cargas completas",
       "descricao": "Carregador portátil movido a energia solar, perfeito para viagens e uso ao ar livre.",
       "preco": 149.90,
-      "imagem": "/carregadorPortatil"
+      "imagem": "/carregadorPortatil.png"
     },
     {
       "id": 7,
@@ -59,7 +59,7 @@
       "classe": "Acessórios",
       "descricao": "Bolsa durável feita de tecido reutilizável, substitui sacolas plásticas e ajuda a reduzir resíduos.",
       "preco": 39.90,
-      "imagem": "/bolsaDeTecido"
+      "imagem": "/bolsaDeTecido.png"
     },
     {
       "id": 8,
@@ -68,7 +68,7 @@
       "duracão": "Dura cerca de 24 horas com carga cheia",
       "descricao": "Luminária compacta que utiliza energia solar para iluminar ambientes de forma econômica e ecológica.",
       "preco": 89.90,
-      "imagem": "/luminariaSolar"
+      "imagem": "/luminariaSolar.png"
     }
   ]
 }
