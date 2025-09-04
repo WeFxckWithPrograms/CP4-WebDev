@@ -39,32 +39,27 @@ const Mercado = ({ addToCart }) => {
     carregarProdutos();
   }, []);
 
-  // Função para aplicar filtros
   const aplicarFiltros = (filtros) => {
     let produtosFiltrados = [...produtos];
 
-    // Filtrar por categoria
     if (filtros.categoria !== 'todos') {
       produtosFiltrados = produtosFiltrados.filter(
         produto => produto.classe === filtros.categoria
       );
     }
 
-    // Filtrar por preço mínimo
     if (filtros.precoMin !== '') {
       produtosFiltrados = produtosFiltrados.filter(
         produto => produto.preco >= Number(filtros.precoMin)
       );
     }
 
-    // Filtrar por preço máximo
     if (filtros.precoMax !== '') {
       produtosFiltrados = produtosFiltrados.filter(
         produto => produto.preco <= Number(filtros.precoMax)
       );
     }
 
-    // Ordenação
     switch (filtros.ordenacao) {
       case 'preco-crescente':
         produtosFiltrados.sort((a, b) => a.preco - b.preco);
@@ -79,14 +74,12 @@ const Mercado = ({ addToCart }) => {
         produtosFiltrados.sort((a, b) => b.nome.localeCompare(a.nome));
         break;
       default:
-        // Mantém a ordenação padrão
         break;
     }
 
     setProdutosFiltrados(produtosFiltrados);
   };
 
-  // Debug do estado
   useEffect(() => {
     console.log('Estado de produtos atualizado:', produtos);
   }, [produtos]);
