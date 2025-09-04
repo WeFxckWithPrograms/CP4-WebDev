@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/header.css';
 
-const Header = ({ cartCount }) => {
+const Header = ({ cartCount, onCartClick }) => {
   return (
     <header className="header">
       <div className="header-container">
@@ -13,7 +13,9 @@ const Header = ({ cartCount }) => {
 
         <nav className="nav-right">
           <a href="#produtos">Produtos</a>
-          <a href="#carrinho">Carrinho ({cartCount})</a>
+          <button className="cart-btn" onClick={onCartClick}>
+            Carrinho ({cartCount})
+          </button>
         </nav>
       </div>
     </header>

@@ -1,4 +1,3 @@
-// src/components/Produto.jsx
 import React from 'react';
 import '../css/produto.css';
 
