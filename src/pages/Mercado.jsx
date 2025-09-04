@@ -55,8 +55,10 @@ const Mercado = ({ addToCart }) => {
 
   return (
     <div className="mercado-container">
-      <h2>Nossos Produtos Sustentáveis</h2>
-      <p className="subtitulo">Descubra itens ecológicos para um estilo de vida consciente</p>
+      <div className="mercado-header">
+        <h2>Nossos Produtos Sustentáveis</h2>
+        <p className="subtitulo">Descubra itens ecológicos para um estilo de vida consciente</p>
+      </div>
       
       {produtos.length === 0 ? (
         <div className="no-products">
