@@ -1,6 +1,5 @@
-/* HEADER BASE */
 .header {
-  background-color: #ca3c3c; /* vermelho dos cards */
+  background-color: #ca3c3c; 
   color: white;
   padding: 15px 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -9,7 +8,6 @@
   z-index: 1000;
 }
 
-/* CONTAINER */
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -18,7 +16,6 @@
   margin: 0 auto;
 }
 
-/* LOGO */
 .logo {
   font-size: 1.8em;
   font-weight: bold;
@@ -32,7 +29,6 @@
   transform: scale(1.05);
 }
 
-/* NAV LINKS */
 .nav {
   display: flex;
   gap: 35px;
@@ -47,11 +43,10 @@
 }
 
 .nav a:hover {
-  color: #cceee8; /* verde claro */
+  color: #cceee8; 
   transform: translateY(-2px);
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
