@@ -24,7 +24,7 @@ const Produto = ({ produto, onAddToCart }) => {
 
         <div className="produto-card">
           <div className="produto-imagem-placeholder">
-            {produto.classe}
+            <img className='produto-imagem' src={produto.imagem} alt={produto.nome} />
           </div>
             <div className="produto-info">
               <h3 className="produto-nome">{produto.nome}</h3>

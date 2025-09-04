@@ -1,3 +1,11 @@
+/* BASE GERAL */
+body {
+    background-color: #F1F8E9;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+
 .mercado-header {
   text-align: center;
   margin-bottom: 30px;
@@ -14,3 +22,5 @@
   font-size: 1.2em;
   color: #555;
 }
+
+

@@ -1,7 +1,7 @@
 export const fetchProdutos = async () => {
   try {
     console.log('Tentando carregar produtos...');
-    const response = await fetch('/data/produtos.json'); 
+    const response = await fetch('/db.json'); 
 
     console.log('Status da resposta:', response.status);
     console.log('URL do fetch:', response.url);

@@ -9,7 +9,7 @@ const Header = ({ cartCount }) => {
           <a href="#home">Home</a>
         </nav>
 
-        <h1 className="logo">DIPLOSER Market</h1>
+        <h1 className="logo">Bio Market</h1>
 
         <nav className="nav-right">
           <a href="#produtos">Produtos</a>

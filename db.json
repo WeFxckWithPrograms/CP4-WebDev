@@ -6,7 +6,8 @@
       "classe": "Roupas",
       "tamanho": "M",
       "descricao": "Camisa confortável feita 100% de algodão orgânico, ideal para um estilo de vida sustentável.",
-      "preco": 79.90
+      "preco": 79.90,
+      "imagem": "/camisaAlgodao.png"
     },
     {
       "id": 2,
