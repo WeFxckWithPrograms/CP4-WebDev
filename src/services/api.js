@@ -1,21 +1,92 @@
+// services/api.js
 export const fetchProdutos = async () => {
   try {
-    console.log('Tentando carregar produtos...');
-    const response = await fetch('/db.json'); 
-
-    console.log('Status da resposta:', response.status);
-    console.log('URL do fetch:', response.url);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    // Modo desenvolvimento: usa json-server com db.json
+    if (import.meta.env.MODE === 'development') {
+      const response = await fetch('http://localhost:3001/products');
+      console.log('Modo desenvolvimento: usando json-server');
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return await response.json();
     }
+    
+    // Modo produção: usa dados mockados (GitHub Pages)
+    console.log('Modo produção: usando dados mockados');
+    
+    const produtosMockados = [
+      {
+        id: 1,
+        nome: "Camisa de Algodão Orgânico",
+        classe: "Roupas",
+        tamanho: "M",
+        descricao: "Camisa confortável feita 100% de algodão orgânico, ideal para um estilo de vida sustentável.",
+        preco: 79.90,
+        imagem: "/camisaAlgodao.png"
+      },
+      {
+        id: 2,
+        nome: "Tênis Sustentável (feito com garrafas PET recicladas)",
+        classe: "Calçados",
+        numero: "40",
+        descricao: "Tênis moderno produzido a partir de garrafas PET recicladas, resistente e ecologicamente correto.",
+        preco: 199.90,
+        imagem: "/tenisSustentável.png"
+      },
+      {
+        id: 3,
+        nome: "Shampoo Natural Vegano",
+        classe: "Beleza",
+        conteudo: "500 ml",
+        descricao: "Shampoo vegano formulado com ingredientes naturais, sem químicos agressivos e livre de crueldade animal.",
+        preco: 32.50,
+        imagem: "/shampooNatural.png"
+      },
+      {
+        id: 4,
+        nome: "Sabonete Artesanal de Carvão Ativado",
+        classe: "Beleza",
+        descricao: "Sabonete artesanal vegano que ajuda na limpeza profunda da pele, removendo impurezas e oleosidade.",
+        preco: 12.00,
+        imagem: "/saboneteArtesanal.png"
+      },
+      {
+        id: 5,
+        nome: "Escova de Dentes de Bambu",
+        classe: "Higiene",
+        descricao: "Escova de dentes sustentável com cabo de bambu biodegradável e cerdas macias.",
+        preco: 15.00,
+        imagem: "/escovaDeDentes.png"
+      },
+      {
+        id: 6,
+        nome: "Carregador Portátil Solar",
+        classe: "Tecnologia Verde",
+        capacidade: "Carrega ate duas cargas completas",
+        descricao: "Carregador portátil movido a energia solar, perfeito para viagens e uso ao ar livre.",
+        preco: 149.90,
+        imagem: "/carregadorPortatil.png"
+      },
+      {
+        id: 7,
+        nome: "Bolsa de Tecido Reutilizável",
+        classe: "Acessórios",
+        descricao: "Bolsa durável feita de tecido reutilizável, substitui sacolas plásticas e ajuda a reduzir resíduos.",
+        preco: 39.90,
+        imagem: "/bolsaDeTecido.png"
+      },
+      {
+        id: 8,
+        nome: "Luminária Solar de Mesa",
+        classe: "Casa Sustentável",
+        duracao: "Dura cerca de 24 horas com carga cheia",
+        descricao: "Luminária compacta que utiliza energia solar para iluminar ambientes de forma econômica e ecológica.",
+        preco: 89.90,
+        imagem: "/luminariaSolar.png"
+      }
+    ];
 
-    const data = await response.json();
-    console.log('Dados recebidos do JSON:', data);
-
-    return data.produtos;
+    return produtosMockados;
   } catch (error) {
     console.error('Erro ao carregar produtos:', error);
-    throw error; 
+    throw error;
   }
 };
