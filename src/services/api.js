@@ -1,7 +1,7 @@
 // services/api.js
 export const fetchProdutos = async () => {
   try {
-    // Modo desenvolvimento: usa json-server com db.json
+
     if (import.meta.env.MODE === 'development') {
       const response = await fetch('http://localhost:3001/products');
       console.log('Modo desenvolvimento: usando json-server');
@@ -9,7 +9,7 @@ export const fetchProdutos = async () => {
       return await response.json();
     }
     
-    // Modo produção: usa dados mockados (GitHub Pages)
+
     console.log('Modo produção: usando dados mockados');
     
     const produtosMockados = [
